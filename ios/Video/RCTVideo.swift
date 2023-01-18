@@ -1021,7 +1021,7 @@ class RCTVideo: UIView, RCTVideoPlayerViewControllerDelegate, RCTPlayerObserverH
                             "orientation": orientation
                           ],
                           "audioTracks": RCTVideoUtils.getAudioTrackInfo(_player),
-                          "textTracks": _textTracks ?? RCTVideoUtils.getTextTrackInfo(_player),
+                          "textTracks": _textTracks ?? RCTVideoUtils.getTextTrackInfo(_player).map({$0.json}),
                           "target": reactTag as Any])
         }
         _videoLoadStarted = false
